@@ -1,0 +1,30 @@
+{% extends "principal/musicapage.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<body>
+    
+    <h1>Musica </h1>
+    <ul>
+        {% for musica in object_list %}
+            <li>
+                <p>NOMBRE: {{musica.nombre}} </p>
+    
+                
+                <p>
+                    
+                    <a href="{% url 'Musica_Detail' musica.id %}"> Ver</a>
+                    
+
+
+                    
+                </p>
+            </li>
+        {% endfor %}
+
+    </ul>
+
+
+
+
+</body>
+{% endblock %}

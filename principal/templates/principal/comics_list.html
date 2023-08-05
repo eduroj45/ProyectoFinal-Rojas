@@ -1,0 +1,30 @@
+{% extends "principal/comicpage.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<body>
+    
+    <h1>Comics </h1>
+    <ul>
+        {% for comic in object_list %}
+            <li>
+                <p>NOMBRE: {{comic.nombre}} </p>
+    
+                
+                <p>
+                    
+                    <a href="{% url 'Comic_Detail' comic.id %}"> Ver</a>
+                    
+
+
+                    
+                </p>
+            </li>
+        {% endfor %}
+
+    </ul>
+
+
+
+
+</body>
+{% endblock %}

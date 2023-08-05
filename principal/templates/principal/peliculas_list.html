@@ -1,0 +1,33 @@
+{% extends "principal/pelispage.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<body>
+    
+    <h1>Peliculas </h1>
+    <ul>
+        {% for pelicula in object_list %}
+            <li>
+                <p>NOMBRE: {{pelicula.nombre}} </p>
+    
+                
+                <p>
+                    
+                    <a href="{% url 'Pelicula_Detail' pelicula.id %}"> Ver</a>
+                    <br>
+                    <a href="{% url 'Pelicula_Edit' pelicula.id %}">Editar</a>
+                    <br>
+                    <a href="{% url 'Pelicula_Delete' pelicula.id %}">Borrar</a>
+
+
+                    
+                </p>
+            </li>
+        {% endfor %}
+
+    </ul>
+
+
+
+
+</body>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "principal/madre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<body>
+    {% if musica.imagen %}
+    <p><img src="{{musica.imagen.url}}" alt=""></p>
+    {% endif %}
+    <p>Artista: <i>{{ musica.artista }}</i></p>
+    <p>Precio: <i>{{ musica.precio }}</i></p>
+    <p>Imagen: <i>{{ musica.imagen }}</i></p>
+    <p>Disco: <i>{{ musica.disco }}</i></p>
+    <p>Genero: <i>{{ musica.genero }}</i></p>
+    <p>Fecha: <i>{{ musica.fecha }}</i></p> 
+    <p>Estado: <i>{{ musica.estado }}</i></p> 
+    <p>Descripcion: <i>{{ musica.descripcion }}</i></p> 
+    <p>Vendedor/a: <i>{{ musica.vendedor }}</i></p>   
+    <p>contacto: <i>{{ musica.contacto }}</i></p>
+    
+        <a href="{% url 'Musica_List' %}">Regresar</a>
+
+    
+    </p>
+</body>
+{% endblock %}

@@ -24,6 +24,7 @@ urlpatterns = [
     path('LogApp/', include('LogApp.urls')),
     path('Registro/', include('Registro.urls')),
     path('Profile/', include('Profile.urls')),
+    path('principal/', include('principal.urls')),
 ]
 
 urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

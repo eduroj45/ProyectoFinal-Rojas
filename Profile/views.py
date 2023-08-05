@@ -1,20 +1,24 @@
 from django.shortcuts import render
 from Profile.forms import AvatarFormulario,UserEditForm
 from Registro.forms import User
+from principal.models import Avatar
+
+
+
 
 def agregarAvatar(request):
     if request.method == "POST":
         miFormulario = AvatarFormulario(request.POST, request.FILES)
         if miFormulario.is_valid():
             u = User.objects.get(username=request.user)
-            #avatar = Avatar(user=u, imagen=miFormulario.cleaned_data['imagen'])
-            #avatar.save()
+            avatar = Avatar(user=u, imagen=miFormulario.cleaned_data['imagen'])
+            avatar.save()
 
-            return render(request, "AppCoder/inicio.html")
+            return render(request, "principal/inicio.html")
     else:
         miFormulario=AvatarFormulario()
         
-    return render(request, "AppCoder/agregarAvatar.html", {'miFormulario': miFormulario})
+    return render(request, "Profile/agregarAvatar.html", {'miFormulario': miFormulario})
     
 
 
@@ -39,10 +43,10 @@ def editarPerfil(request):
 
             usuario.save()
 
-            return render(request, "AppCoder/inicio.html")
+            return render(request, "principal/inicio.html")
 
     else:
 
         miFormulario = UserEditForm(initial={'email': usuario.email})
 
-    return render(request, "AppCoder/editarPerfil.html", {"miFormulario": miFormulario, "usuario": usuario})
+    return render(request, "principal/editarPerfil.html", {"miFormulario": miFormulario, "usuario": usuario})
