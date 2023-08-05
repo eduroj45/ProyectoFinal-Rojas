@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-import datetime
+
 
 
 
@@ -16,7 +16,7 @@ class Avatar(models.Model):
 class Pelicula(models.Model):
     nombre= models.CharField(max_length=50)
     precio= models.IntegerField()
-    imagen= models.ImageField(upload_to='imagenes', null=True , blank =True)
+    imagen= models.ImageField(upload_to='media', null=True , blank =True)
     estado= models.CharField(max_length=20)
     genero= models.CharField(max_length= 30)
     descripcion= models.CharField(max_length= 500)
@@ -27,7 +27,7 @@ class Pelicula(models.Model):
 class Comic(models.Model):
     nombre= models.CharField(max_length=30)
     precio= models.IntegerField()
-    imagen= models.ImageField(upload_to='imagenes', null=True , blank =True)
+    imagen= models.ImageField(upload_to='media', null=True , blank =True)
     estado= models.CharField(max_length=20)
     editorial= models.CharField(max_length=20)
     descripcion= models.CharField(max_length= 500)
@@ -40,7 +40,7 @@ class Comic(models.Model):
 class Musica(models.Model):
     artista= models.CharField(max_length=50)
     precio= models.IntegerField()
-    imagen= models.ImageField(upload_to='imagenes', null=True , blank =True)
+    imagen= models.ImageField(upload_to='media', null=True , blank =True)
     disco= models.CharField(max_length=50)
     genero= models.CharField(max_length=30)
     estado= models.CharField(max_length=20)

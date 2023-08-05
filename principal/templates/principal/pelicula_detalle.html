@@ -1,0 +1,25 @@
+{% extends "principal/pelispage.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<body>
+    {% if pelicula.imagen %}
+    <p><img src="{{pelicula.imagen.url}}" alt=""></p>
+    {% endif %}
+    <p>Nombre de la pelicula: <i>{{ pelicula.nombre }}</i></p>
+    <p>Precio: <i>{{ pelicula.precio }}</i></p>
+    <p>Estado: <i>{{ pelicula.estado }}</i></p>
+    <p>Genero: <i>{{ pelicula.genero }}</i></p>
+    <p>Descripcion: <i>{{ pelicula.descripcion }}</i></p>
+    <p>Fecha: <i>{{ pelicula.fecha }}</i></p> 
+    <p>Vendedor/a: <i>{{ pelicula.vendedor }}</i></p>   
+    <p>contacto: <i>{{ pelicula.contacto }}</i></p>
+    
+        <a href="{% url 'Pelicula_List' %}">Regresar</a>
+
+    
+    </p>
+</body>
+{% endblock %}
+    
+
+   

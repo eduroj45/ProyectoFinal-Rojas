@@ -12,10 +12,10 @@ def register(request):
 
                   username = form.cleaned_data['username']
                   form.save()
-                  return render(request,"AppCoder/inicio.html" ,  {"mensaje":"Usuario Creado :)"})
+                  return render(request,"LogApp/login.html" ,  {"mensaje":"Usuario Creado :)"})
 
       else:
                  
             form = UserRegisterForm()     
 
-      return render(request,"AppCoder/registro.html" ,  {"form":form})
+      return render(request,"Registro/registro.html" ,  {"form":form})

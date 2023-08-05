@@ -1,0 +1,16 @@
+{% extends "principal/pelispage.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<body>
+    <form method="post">{% csrf_token %}
+        ¿Estas seguro de querer borrar la Pelicula "{{pelicula.nombre}}"?
+        <input type="submit" value="Borrar" /> 
+
+
+
+    </form>
+</body>
+
+
+{% endblock %}

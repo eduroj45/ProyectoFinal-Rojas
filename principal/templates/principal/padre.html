@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Ollie landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Ollie Landing page | Free Bootstrap 4.3.x landing page</title>
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.css">
+
+    <!-- Bootstrap + Ollie main styles -->
+	<link rel="stylesheet" href="{% static 'principal/assets/css/ollie.css' %}">
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/imgs/brand.svg" alt="" class="brand-img"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Inicio' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'About' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Pelicula_List' %}">Peliculas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Comic_List' %}">Comics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'musica_List' %}">Musica</a>
+                    </li>
+
+                       
+
+
+
+                    <li class="nav-item ml-0 ml-lg-4">
+                        {% if not request.user.is_authenticated %}
+                        <a class="nav-link btn btn-primary" href="{% url 'Login' %}">Iniciar</a>
+                        {% endif %}
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li style="list-style: none; font-weight: bold;" class="navbar-brand ">
+                        <a class="text-center">
+                            <img height="40px" src="{{url}}">
+                            <h6>Hola {{user.username}}</h6>
+                        
+                        </a>
+                        
+                    </li>
+                    {% endif %}
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'EditarPerfil' %}">Editar Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" btn btn-primary" href="{% url 'Logout' %}">Logout</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <header id="home" class="header">
+        <div class="overlay"></div>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
+            <div class="container">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">Proyecto Final<br> Eduardo Rojas</h1>
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">We Make <br> Responsive Design</h1>
+                            <button class="btn btn-primary btn-rounded">Learn More</button>
+                          </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">We Make <br> Simple Design</h1>
+                            <button class="btn btn-primary btn-rounded">Learn More</button>
+                          </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+
+        <div class="infos container mb-4 mb-md-2">
+            <div class="title">
+                <h6 class="subtitle font-weight-normal">Academia Coderhouse</h6>
+                <h5>Comision 54955</h5>
+                <p class="font-small">Pagina web </p>
+            </div>
+            <div class="socials text-right">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block contenidoQueCambia %}
+
+    {% endblock %}
+
+
+    <section class="section" id="about">
+
+        <div class="container">
+
+            <div class="row align-items-center mr-auto">
+                <div class="col-md-4">
+                    <h6 class="xs-font mb-0">primeros pasos en Programacion</h6>
+                    <h3 class="section-title">About Us</h3>
+                    <p>Mi nombre es Eduardo Rojas, tengo 29 años, estudio Python en la Academia Digital Coderhouse... </p>
+
+                    <a href="{% url 'About' %}">Leer Mas...</a>
+                </div>
+                
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <section class="section" id="Peliculas">
+
+        <div class="container">
+
+            <div class="row align-items-center mr-auto">
+                <div class="col-md-4">
+                    
+                    <h3 class="section-title">Peliculas</h3>
+                    <p>En esta seccion veras a la venta , las mejores peliculas que nuestros usuarios ofrecen, podras adquirir los mejores titulos , contactandote con el vendedor, como tambien vender ese film que tienes a mano y quieres sacarle un provecho </p>
+
+                    <a href="{% url 'Pelicula_List' %}">Leer Mas...</a>
+                </div>
+                
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+
+    <section class="section" id="Peliculas">
+
+        <div class="container">
+
+            <div class="row align-items-center mr-auto">
+                <div class="col-md-4">
+                    
+                    <h3 class="section-title">Comics</h3>
+                    <p>Los mejores titulos, de las mejores editoriales encontralos aca, en esta seccion....</p>
+
+                    <a href="{% url 'Comics' %}">Leer Mas...</a>
+                </div>
+                
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+   
+
+
+
+
+   
+
+    
+
+            <footer class="footer mt-5 border-top">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-6 text-center text-md-left">
+                        <p class="mb-0">Comision 54955 <script>document.write(new Date().getFullYear())</script> &copy; <a target="_blank" href="http://www.coderhouse.com">Coderhouse</a></p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <div class="social-links">
+                            <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+                        </div>
+                    </div>
+                </div> 
+            </footer>
+        </div>
+    </section>
+	
+	<!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    
+    <!-- Owl carousel  -->
+    <script src="assets/vendors/owl-carousel/js/owl.carousel.js"></script>
+
+
+    <!-- Ollie js -->
+    <script src="assets/js/Ollie.js"></script>
+
+</body>
+</html>

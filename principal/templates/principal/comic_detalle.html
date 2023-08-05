@@ -1,0 +1,23 @@
+{% extends "principal/comicpage.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<body>
+    {% if comic.imagen %}
+    <p><img src="{{comic.imagen.url}}" alt=""></p>
+    {% endif %}
+    <p>Nombre: <i>{{ comic.nombre }}</i></p>
+    <p>Precio: <i>{{ comic.precio }}</i></p>
+    
+    <p>Estado: <i>{{ comic.estado }}</i></p>
+    <p>Editorial: <i>{{ comic.editorial }}</i></p>
+    <p>Descripcion: <i>{{ comic.descripcion }}</i></p> 
+    <p>Fecha: <i>{{ comic.fecha }}</i></p> 
+    <p>Vendedor/a: <i>{{ comic.vendedor }}</i></p>   
+    <p>contacto: <i>{{ comic.contacto }}</i></p>
+    
+        <a href="{% url 'Comic_List' %}">Regresar</a>
+
+    
+    </p>
+</body>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "principal/madre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<body>
+    
+
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="GUARDAR"/>
+    </form>
+</body>
+{% endblock %}

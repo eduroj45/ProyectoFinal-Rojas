@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,authenticate
+from principal.models import Avatar
 
+
+def inicio(request):
+    avatares = Avatar.objects.filter(user=request.user.id)
+    return render(request, 'principal/inicio.html', {'url':avatares[0].imagen.url})
 
 def login_request(request):
 
