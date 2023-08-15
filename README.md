@@ -16,3 +16,4 @@ la unica seccion que tiene CRUD completo es la de peliculas.
 
 el link para el video es el siguiente:
 https://drive.google.com/file/d/1OAZ_0YE5JHzzOexwvIY-U1Y394YYAwSx/view?usp=drive_link
+link de caso de prueba: https://docs.google.com/spreadsheets/d/1N70lPe3g_c_yGLybaZTUiTXEYpo450u1/edit?usp=drive_link&ouid=100384969692638294721&rtpof=true&sd=true
